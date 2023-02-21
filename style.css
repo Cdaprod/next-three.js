@@ -1,0 +1,52 @@
+.wrapper {
+  display: grid;
+  grid-template-columns: 1fr 200px;
+  grid-template-rows: 1fr 1fr;
+  grid-template-areas:
+    "canvas content1"
+    "canvas content2"
+    "canvas content3"
+    "canvas content4";
+  height: 100vh;
+  overflow: hidden;
+}
+
+#canvas {
+  grid-area: canvas;
+}
+
+.content {
+  grid-area: canvas;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+  background-color: white;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  pointer-events: none;
+  transform: rotateX(0deg);
+  transform-origin: center center;
+  transition: transform 0.5s ease-in-out;
+}
+
+.active {
+  transform: rotateX(-90deg);
+}
+
+#content1 {
+  transform-origin: top center;
+}
+
+#content2 {
+  transform-origin: bottom center;
+}
+
+#content3 {
+  transform-origin: left center;
+}
+
+#content4 {
+  transform-origin: right center;
+}
